@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}{% load staticfiles %}
+    <div style="position: relative">
+        {% include 'generic/h2.html' %}
+        <!--NOVOSTI-->
+        <div class="novosti">
+            <div class="nov-content ">
+                <div class="w3-row-padding w3-margin-top w3-center"
+                     style="position:relative;box-sizing: border-box; content: '';">
+                    {% for cat in category %}
+
+                        <div class="w3-third ">
+                            <div class="w3-card-4 w3-margin white">
+
+                                <div class="test" style="position: relative;overflow:hidden;">
+                                    {% if cat.image %}
+                                        <img src="{{ cat.image.url }}" alt="" width="100%">
+                                    {% endif %}
+                                </div>
+                                <div class="w3-margin">
+                                    <a href="{{ cat.get_absolute_url }}" title="{{ cat.name }}">
+                                        <h3 class="w3-hover-text-green w3-justify">
+                                            <b>{{ cat.name|truncatechars:35 }}</b>
+                                        </h3></a>
+                                    <hr class="hr">
+                                    <div class="w3-left">
+                                        <i class="fa fa-clock w3-text-green w3-margin">
+                                            <span class="w3-text-black">{{ cat.created|time }}</span>
+                                        </i>
+                                        <i class="w3-text-green fa fa-calendar w3-margin">
+                                            <span class="w3-text-black">{{ cat.created|date:'y.m.d' }}</span>
+                                        </i>
+                                    </div>
+                                    <br><br>
+                                    <div class="w3-padding">
+                                        <p class="w3-justify">
+                                            {{ cat.text|truncatechars:70 }}
+                                        </p>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+            {% include 'generic/paginator.html' %}
+        </div>
+
+    </div>
+
+
+
+    <style>
+        .top-zagolov {
+            padding-top: 200px;
+            padding-left: 150px;
+            padding-right: 150px;
+            font-size: 8vw;
+        }
+    </style>
+{% endblock %}

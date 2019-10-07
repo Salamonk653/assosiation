@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}МАПЭФ{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{% static 'img/logo1.png' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.default.css' %}">
+    <!--    <link rel="stylesheet" href="../static/css/bootstrap.css">-->
+    <!--    <link rel="stylesheet" href="../static/css/bootstrap-grid.min.css">-->
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+    {% block css %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+</head>
+<body>
+
+{#vstupitelnaya forma - modal#}
+<div id="vstupit-modal" class="overlay">
+    <span class="closebtn" onclick="closeOverlay('vstupit-modal')" title="Close Overlay">x</span>
+    <div class="overlay-content" style="top: 28%;">
+        <form action="{% url 'ru_contact_form' %}" method="post">{% csrf_token %}
+            <h2 class="w3-text-white">Форма обратной связи</h2>
+{#            {% for form in forms %}#}
+                <div class="input-container">
+                    <i class="fa fa-user icon w3-green"></i>
+                    {{ form.name }}
+                    {#                <input class="input-field" type="text" placeholder="Имя" name="name">#}
+                </div>
+
+                <div class="input-container">
+                    <i class="fa fa-envelope icon w3-green"></i>
+                    {{ form.email }}
+                    {#                <input class="input-field" type="text" placeholder="Емейл" name="email">#}
+                </div>
+
+                <div class="input-container">
+                    <i class="fa fa-key icon w3-green"></i>
+                    {{ form.phone }}
+                    {#                <input class="input-field" type="text" placeholder="Телефон" name="phone">#}
+                </div>
+{#            {% endfor %}#}
+            <button type="submit" class="btn w3-green">Отправить</button>
+        </form>
+
+    </div>
+</div>
+
+
+<style>
+    .section {
+        background-color: #71c827;
+    }
+
+    .w3-hover-text-green:hover, .w3-hover-text-light-green:hover {
+        color: #71c827 !important;
+    }
+
+    .w3-hover-light-green:hover, .w3-light-green, .w3-hover-green:hover, .w3-green {
+        color: #ffffff !important;
+        background-color: #71c827 !important;
+        text-decoration: none;
+    }
+
+    .w3-text-green, .w3-text-light-green {
+        color: #71c827 !important
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+</style>
+<navbar>
+    <!--Navbar small display-->
+    <div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
+    <span class="w3-button w3-large w3-light-green w3-right" style="cursor: pointer;" onclick="w3_close()"><b
+            class="w3-text-white">&times;</b></span>
+
+        <div class="w3-bar-item w3-light-green">
+            <img src="{% static 'img/logo1.png' %}" alt="" width="100%">
+        </div>
+
+        <div class="1">
+            <button class="w3-button" onclick="myAccFunc('dem1')">О нас <i class="fa fa-caret-down"></i></button>
+            <div id="dem1" class="w3-hide w3-bar-block w3-card-4">
+                <a href="{% url 'ru_onas' %}#asosiation" class="w3-bar-item w3-button">О ассоциации</a>
+                <a href="{% url 'ru_onas' %}#stuctures" class="w3-bar-item w3-button">Структура</a>
+                <a href="{% url 'ru_onas' %}#chlen" class="w3-bar-item w3-button">Члены</a>
+                <a href="{% url 'ru_onas' %}#partner" class="w3-bar-item w3-button">Партнеры</a>
+            </div>
+        </div>
+        <div class="1">
+            <button class="w3-button" onclick="myAccFunc('dem2')">Наши поекты <i class="fa fa-caret-down"></i></button>
+            <div id="dem2" class="w3-hide w3-bar-block w3-card-4">
+                {% for cat in navbar %}
+                    <a href="{% url 'ru_category_detail' slug=cat.slug %}"
+                       class="w3-bar-item w3-button">{{ cat.name }}</a>
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="1">
+            <button class="w3-button" onclick="myAccFunc('dem3')">Мероприятия <i class="fa fa-caret-down"></i></button>
+            <div id="dem3" class="w3-hide w3-bar-block w3-card-4">
+                <a href="{% url 'ru_anonsy' %}" class="w3-bar-item w3-button">Анонсы</a>
+                <a href="{% url 'ru_category' %}" class="w3-bar-item w3-button">Новости</a>
+                <a href="#" class="w3-bar-item w3-button">Медиа</a>
+            </div>
+        </div>
+        <div class="1">
+            <button class="w3-button" onclick="myAccFunc('dem4')">Членство <i class="fa fa-caret-down"></i></button>
+            <div id="dem4" class="w3-hide w3-bar-block w3-card-4">
+                <a href="#" class="w3-bar-item w3-button">Ассосиасия член</a>
+                <a href="#" class="w3-bar-item w3-button">Частный клуб бизнесменов</a>
+            </div>
+        </div>
+        <a href="#" class="w3-bar-item w3-button">Котолог</a>
+        <a href="{% url 'ru_contacts' %}" class="w3-bar-item w3-button">Контакты</a>
+    </div>
+    <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+    <!--Navbar for large display-->
+    <div class="w3-white nav-glav" style="">
+        <div class="w3-bar w3-left-align">
+            <a class="w3-bar-item w3-button w3-padding-24 w3-hide-large w3-right w3-hover-light-green"
+               href="javascript:void(0);" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+
+
+            <div class="w3-dropdown-hover w3-hide-small w3-hide-medium">
+                <button class="w3-padding-24 w3-button w3-hover-light-green">О нас <i
+                        class="fa fa-caret-down"></i></button>
+                <div id="demo1" class="w3-dropdown-content w3-card w3-bar-block">
+                    <a href="{% url 'ru_onas' %}#asosiation"
+                       class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">О ассоциации</a>
+                    <a href="{% url 'ru_onas' %}#stuctures"
+                       class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Структура</a>
+                    <a href="{% url 'ru_onas' %}#chlen"
+                       class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Члены</a>
+                    <a href="{% url 'ru_onas' %}#partner"
+                       class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Партнеры</a>
+                </div>
+            </div>
+
+            <div class="w3-dropdown-hover w3-hide-small w3-hide-medium">
+                <button class="w3-padding-24 w3-button w3-hover-light-green">Наши поекты <i
+                        class="fa fa-caret-down"></i></button>
+                <div id="1" class="w3-dropdown-content w3-white w3-card w3-bar-block demoAcc">
+                    {% for cat in navbar %}
+                        <a href="{% url 'ru_category_detail' slug=cat.slug %}"
+                           class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">{{ cat.name }}</a>
+                        {#                        <a href="{% url '' %}" class="w3-bar-item w3-button">{{ cat.name }}</a>#}
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <div class="w3-dropdown-hover w3-hide-small w3-hide-medium">
+                <button class="w3-padding-24 w3-button w3-hover-light-green">Мероприятия <i
+                        class="fa fa-caret-down"></i></button>
+                <div id="2" class="w3-dropdown-content w3-white w3-card w3-bar-block demoAcc">
+                    <a href="{% url 'ru_anonsy' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Анонсы</a>
+                    <a href="{% url 'ru_category' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Новости</a>
+                    <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Медиа</a>
+                </div>
+            </div>
+
+            <div class="w3-dropdown-hover w3-hide-small w3-hide-medium">
+                <button class="w3-padding-24 w3-button w3-hover-light-green">Членство <i
+                        class="fa fa-caret-down"></i></button>
+                <div id="4" class="w3-dropdown-content w3-white w3-card w3-bar-block demoAcc">
+                    <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Ассосиасия член</a>
+                    <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Частный клуб
+                        бизнесменов</a>
+                </div>
+            </div>
+
+            <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Котолог</a>
+            <a href="{% url 'ru_contacts' %}"
+               class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Контакты</a>
+
+            <div class="w3-dropdown-hover">
+                <button class="w3-padding-24 w3-button w3-hover-light-green"><i
+                        class="fas fa-globe-asia"></i></button>
+                <div id="5" class="w3-dropdown-content w3-white w3-card w3-bar-block demoAcc">
+                    <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">RU</a>
+                    <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">EN</a>
+                </div>
+            </div>
+
+            <a href="javascript:void(0);" class="w3-bar-item w3-padding-24 w3-button w3-right w3-hover-light-green"
+               onclick="openOverlay('search')"><i
+                    class="fa fa-search"></i></a>
+        </div>
+    </div>
+
+    <!--Form for search-->
+    <div id="search" class="overlay">
+        <span class="closebtn" onclick="closeOverlay('search')" title="Close Overlay">x</span>
+        <div class="overlay-content">
+            <form>
+                <input type="text" placeholder="Искать..">
+                <button type="submit" class="w3-green w3-hover-black"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <b>
+        <hr class="w3-display-topright w3-border-white nav-border" style="z-index: 2; margin-top: 85px">
+    </b>
+
+    <div class="w3-bar w3-display-topleft logo">
+        <a href="/" class="w3-bar-item  ">
+            <img class="w3-left" src="{% static 'img/LOGO.png' %}" alt="" style="width: 100%; height: 100%;">
+        </a>
+    </div>
+</navbar>
+{% autoescape off %}
+    {% block content %}
+    {% endblock %}
+{% endautoescape %}
+<footer class="w3-row-padding w3-padding-32 w3-black">
+    <div class="w3-third">
+        <h3 class="w3-text-green">О НАС</h3>
+        <hr class="hr">
+        <p>Бизнес-ассоциация JIA -площадка для предпринимателей, которые ведут деятельность на отечественных и на
+            международных рынках. Ассоциация более 12 лет активно помогает отечественному бизнесу в развитии
+            предпринимательской деятельности в разных секторах</p><br>
+        <p><i class="w3-tag">Все права защишены 2019</i></p>
+    </div>
+
+    <div class="w3-third">
+        <h3 class="w3-text-green">ПОСЛЕДНИЕ НОВОСТИ</h3>
+        <hr class="hr">
+        <ul class="w3-ul w3-hoverable">
+            {% for foo in articles_4 %}
+
+
+                <li class="w3-padding-16 w3-hover-green">
+                    <img src="{{ foo.image.url }}" class="w3-left w3-margin-right" style="width:50px">
+                    <span class="w3-large" title="{{ foo.name }}">{{ foo.name|truncatechars:25 }}</span><br>
+                </li>
+
+            {% endfor %}
+
+        </ul>
+    </div>
+
+    <div class="w3-third kontakty">
+        <h3 class="w3-text-green">КОНТАКТЫ</h3>
+        <hr class="hr">
+        <p class="w3-bar-block">
+            <button class="w3-bar-item w3-black w3-round-xxlarge">
+                <i class="fa fa-home w3-green w3-padding-large "></i>
+                <span class='w3-padding'> Эркиндик кочосу 26</span>
+            </button>
+            <button class="w3-bar-item w3-black w3-round-xxlarge">
+                <i class="fa fa-phone w3-green w3-padding-large "></i>
+                <span class='w3-padding'> +996 777 875 960</span>
+            </button>
+            <button class="w3-bar-item w3-black w3-round-xxlarge">
+                <i class="fa fa-mail-bulk w3-green w3-padding-large "></i>
+                <span class='w3-padding'> iapef@mail.ru</span>
+            </button>
+
+        </p>
+    </div>
+</footer>
+
+
+<script>
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+</script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/carousel.js' %}"></script>
+{% block js %}{% endblock %}
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

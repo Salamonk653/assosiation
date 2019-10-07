@@ -1,0 +1,7 @@
+Django==1.11.23
+social-auth-app-django
+django-ckeditor==5.7.1
+django-cleanup==4.0.0
+django-elasticsearch-dsl==0.5.1
+Pillow==6.1.0
+sorl-thumbnail==12.5.0

@@ -1,0 +1,56 @@
+<div class="slider ">{% load staticfiles %}
+
+    <!--- OWL-CArousel --->
+    <div class="owl-carousel owl-theme">
+
+        {% for foo in sliders %}
+            <div class="owl-slide d-flex glav-slide-container align-items-center cover"
+                 style="background-image: url({{ foo.image.url }});">
+                <div class="container" >
+                    <div class="row justify-content-center justify-content-md-start">
+                        <div class="col-10 col-md-6 static">
+                            <div class="owl-slide-text">
+                                <h2 class="owl-slide-animated owl-slide-title">{{ foo.name }}</h2>
+                                <div class="owl-slide-animated owl-slide-subtitle mb-3">
+                                    {{ foo.text }}
+                                </div>
+{#                                <a class="owl-slide-animated owl-slide-cta"#}
+{#                                   href="https://unsplash.com/photos/pgR4yBMjum8" target="_blank" role="button">See#}
+{#                                    Original#}
+{#                                    Image</a>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/owl-slide-->
+        {% endfor %}
+
+    </div>
+
+
+    <section class="section">
+        <div class="container w3-text-white">
+            <div class="row">
+                <div class="ss">
+                    <div class="w3-margin w3-center w3-text-black">
+                        <div class="zagolov w3-margin-bottom">
+                            <b class="w3-center">ЧТО ТАКОЕ <span class="w3-text-white">МАПЭФ?</span></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-border-white" style="width:100%;margin-bottom: -20%;">
+                    <div class="">
+                        <div style="width:100%;border: 20px solid white;" class="">
+                            <img src="../../static/img/gif7.gif" alt="" style="width: 100%;">
+                            <!--                            <div class="d1-play">-->
+                            <!--                                <img src="../static/img/play.svg" alt="">-->
+                            <!--                            </div>-->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>

@@ -1,0 +1,87 @@
+@media only screen and (max-width: 300px) {
+    .prev, .next, .text {
+        font-size: 11px
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .owl-carousel .owl-nav {
+        top: 5%;
+    }
+
+    .owl-carousel .owl-nav svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .logo {
+        width: 60%;
+    }
+
+    .nav-border {
+        width: 45%;
+    }
+
+    .nav-glav {
+        width: 40%;
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .zagolov {
+        font-size: 25px;
+    }
+
+    .sifra {
+        font-size: 8vw;
+    }
+
+    h2 {
+        font-size: 8vw;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    h4 {
+        font-size: 15px;
+    }
+    .top-banner {
+        min-height: 180px;
+    }
+    .top-zagolov {
+        padding-top: 115px;
+        padding-left: 50px;
+    }
+    .glav-slide-container{
+        padding-left: 10%;
+    }
+}
