@@ -74,4 +74,15 @@
     h4 {
         font-size: 15px;
     }
+    .top-banner {
+        min-height: 180px;
+    }
+    .top-zagolov {
+        padding-top: 115px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .glav-slide-container{
+        padding-left: 10%;
+    }
 }

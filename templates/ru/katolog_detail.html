@@ -1,0 +1,83 @@
+{% extends 'base.html' %} {% load category %}
+{% block css %}
+{% endblock %}
+{% block title %}
+    {{ h2|upper }}
+{% endblock %}
+{% block js %}
+{% endblock %}
+{% block content %}
+    {% include 'generic/h2.html' %}
+    <br><br><br>
+    <div class="w3-containner sss">
+        <div class="w3-row-padding">
+            {% for glav in page_obj %}
+                <ul class="w3-ul w3-card-4">
+                    <li class="w3-bar">
+                        <img src="{{ glav.image.url }}" class="w3-bar-item image">
+                        <h4 class="w3-text-green w3-bar-item h4-text">
+                            Организация: <span>{{ glav.name }}</span><br>
+                            Адрес: <span>{{ glav.address }}</span><br>
+                            Вид деятельности: <span>{{ glav.vid }}</span><br>
+                            Руководитель: <span>{{ glav.rukovoditel }}</span><br>
+                            Контакты: <span>{{ glav.phone }}</span><br>
+                            E-mail: <span>{{ glav.email }}</span><br>
+                        </h4>
+                    </li>
+                </ul>
+
+
+                <hr class="hr">
+
+            {% endfor %}
+
+        </div>
+        {% include 'generic/paginator.html' %}
+    </div>
+
+
+    <style>
+        .sss {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        .glav-katalog {
+            font-size: 2.5vw;
+        }
+
+        .top-zagolov {
+            font-size: 5vw;
+        }
+
+        h4 span {
+            color: #000;
+        }
+
+        .image {
+            width: 30% !important;
+        }
+
+        @media screen and (max-width: 480px) {
+            .glav-katalog {
+                font-size: 7vw;
+            }
+
+            .image {
+                width: 100% !important;
+            }
+
+            .h4-text {
+                font-size: small;
+            }
+        }
+
+        @media screen and (max-width: 780px) {
+            .glav-katalog {
+                font-size: 3vw;
+            }
+        }
+
+    </style>
+    <br><br><br>
+{% endblock %}

@@ -2,46 +2,41 @@
 <html lang="en">{% load staticfiles %}
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}МАПЭФ{% endblock %}</title>
+    <title>{% block title %}Международная Ассосиация Партнерской Экономики и Финансов | Главная страница{% endblock %} |
+        МАПЭФ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{% static 'img/logo1.png' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.default.css' %}">
-    <!--    <link rel="stylesheet" href="../static/css/bootstrap.css">-->
-    <!--    <link rel="stylesheet" href="../static/css/bootstrap-grid.min.css">-->
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.default.css' %}">
+    {% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/w3.css' %}">
-    {% block css %}{% endblock %}
-    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
     <link rel="stylesheet" href="{% static 'css/media.css' %}">
 </head>
-<body>
+<body style="overflow: hidden;">
 
 {#vstupitelnaya forma - modal#}
 <div id="vstupit-modal" class="overlay">
     <span class="closebtn" onclick="closeOverlay('vstupit-modal')" title="Close Overlay">x</span>
-    <div class="overlay-content" style="top: 28%;">
+    <div class="overlay-content fa" style="top: 28%;">
         <form action="{% url 'ru_contact_form' %}" method="post">{% csrf_token %}
             <h2 class="w3-text-white">Форма обратной связи</h2>
-{#            {% for form in forms %}#}
-                <div class="input-container">
-                    <i class="fa fa-user icon w3-green"></i>
-                    {{ form.name }}
-                    {#                <input class="input-field" type="text" placeholder="Имя" name="name">#}
-                </div>
+            <div class="input-container">
+                <i class="fa fa-user icon w3-green"></i>
+                {{ form.name }}
+            </div>
 
-                <div class="input-container">
-                    <i class="fa fa-envelope icon w3-green"></i>
-                    {{ form.email }}
-                    {#                <input class="input-field" type="text" placeholder="Емейл" name="email">#}
-                </div>
+            <div class="input-container">
+                <i class="fa fa-envelope icon w3-green"></i>
+                {{ form.email }}
+            </div>
 
-                <div class="input-container">
-                    <i class="fa fa-key icon w3-green"></i>
-                    {{ form.phone }}
-                    {#                <input class="input-field" type="text" placeholder="Телефон" name="phone">#}
-                </div>
-{#            {% endfor %}#}
+            <div class="input-container">
+                <i class="fa fa-key icon w3-green"></i>
+                {{ form.phone }}
+            </div>
             <button type="submit" class="btn w3-green">Отправить</button>
         </form>
 
@@ -71,53 +66,48 @@
     a {
         text-decoration: none !important;
     }
+
+    em {
+        font-style: normal;
+    }
 </style>
 <navbar>
     <!--Navbar small display-->
-    <div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
-    <span class="w3-button w3-large w3-light-green w3-right" style="cursor: pointer;" onclick="w3_close()"><b
-            class="w3-text-white">&times;</b></span>
+    <div class="w3-sidebar w3-bar-block w3-black w3-text-white w3-animate-left"
+         style="display:none;z-index:5" id="mySidebar">
 
-        <div class="w3-bar-item w3-light-green">
-            <img src="{% static 'img/logo1.png' %}" alt="" width="100%">
+
+        <div class="w3-bar-item w3-white">
+            <img src="{% static 'img/logo_for_mobaile 3.png' %}" alt="" width="100%">
         </div>
 
+        <a href="{% url 'ru_onas' %}" class="w3-bar-item w3-hover-text-green">О нас</a>
+
         <div class="1">
-            <button class="w3-button" onclick="myAccFunc('dem1')">О нас <i class="fa fa-caret-down"></i></button>
-            <div id="dem1" class="w3-hide w3-bar-block w3-card-4">
-                <a href="{% url 'ru_onas' %}#asosiation" class="w3-bar-item w3-button">О ассоциации</a>
-                <a href="{% url 'ru_onas' %}#stuctures" class="w3-bar-item w3-button">Структура</a>
-                <a href="{% url 'ru_onas' %}#chlen" class="w3-bar-item w3-button">Члены</a>
-                <a href="{% url 'ru_onas' %}#partner" class="w3-bar-item w3-button">Партнеры</a>
-            </div>
-        </div>
-        <div class="1">
-            <button class="w3-button" onclick="myAccFunc('dem2')">Наши поекты <i class="fa fa-caret-down"></i></button>
-            <div id="dem2" class="w3-hide w3-bar-block w3-card-4">
+            <button class="w3-hover-text-green w3-bar-item w3-black" onclick="myAccFunc('dem2')">Наши поекты <i
+                    class="fa fa-caret-down"></i></button>
+            <div id="dem2" class="w3-hide w3-bar-block">
                 {% for cat in navbar %}
                     <a href="{% url 'ru_category_detail' slug=cat.slug %}"
-                       class="w3-bar-item w3-button">{{ cat.name }}</a>
+                       class="w3-bar-item w3-hover-text-green" style="padding-left: 20%">{{ cat.name }}</a>
                 {% endfor %}
 
             </div>
         </div>
         <div class="1">
-            <button class="w3-button" onclick="myAccFunc('dem3')">Мероприятия <i class="fa fa-caret-down"></i></button>
+            <button class="w3-hover-text-green w3-bar-item w3-black" onclick="myAccFunc('dem3')">Мероприятия <i
+                    class="fa fa-caret-down"></i></button>
             <div id="dem3" class="w3-hide w3-bar-block w3-card-4">
-                <a href="{% url 'ru_anonsy' %}" class="w3-bar-item w3-button">Анонсы</a>
-                <a href="{% url 'ru_category' %}" class="w3-bar-item w3-button">Новости</a>
-                <a href="#" class="w3-bar-item w3-button">Медиа</a>
+                <a href="{% url 'ru_anonsy' %}" class="w3-bar-item w3-hover-text-green"
+                   style="padding-left: 20%">Анонсы</a>
+                <a href="{% url 'ru_category' %}" class="w3-bar-item w3-hover-text-green" style="padding-left: 20%">Новости</a>
+                <a href="{% url 'ru_gallery_list' %}" class="w3-bar-item w3-hover-text-green" style="padding-left: 20%">Галарея</a>
+                <a href="{% url 'ru_video_list' %}" class="w3-bar-item w3-hover-text-green" style="padding-left: 20%">Видео</a>
             </div>
         </div>
-        <div class="1">
-            <button class="w3-button" onclick="myAccFunc('dem4')">Членство <i class="fa fa-caret-down"></i></button>
-            <div id="dem4" class="w3-hide w3-bar-block w3-card-4">
-                <a href="#" class="w3-bar-item w3-button">Ассосиасия член</a>
-                <a href="#" class="w3-bar-item w3-button">Частный клуб бизнесменов</a>
-            </div>
-        </div>
-        <a href="#" class="w3-bar-item w3-button">Котолог</a>
-        <a href="{% url 'ru_contacts' %}" class="w3-bar-item w3-button">Контакты</a>
+        <a href="{% url 'ru_chlenstvo' %}" class="w3-bar-item w3-hover-text-green">Членство</a>
+        <a href="{% url 'ru_katalog' %}" class="w3-bar-item w3-hover-text-green">Котолог</a>
+        <a href="{% url 'ru_contacts' %}" class="w3-bar-item w3-hover-text-green">Контакты</a>
     </div>
     <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
@@ -127,21 +117,8 @@
             <a class="w3-bar-item w3-button w3-padding-24 w3-hide-large w3-right w3-hover-light-green"
                href="javascript:void(0);" onclick="w3_open()"><i class="fa fa-bars"></i></a>
 
-
-            <div class="w3-dropdown-hover w3-hide-small w3-hide-medium">
-                <button class="w3-padding-24 w3-button w3-hover-light-green">О нас <i
-                        class="fa fa-caret-down"></i></button>
-                <div id="demo1" class="w3-dropdown-content w3-card w3-bar-block">
-                    <a href="{% url 'ru_onas' %}#asosiation"
-                       class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">О ассоциации</a>
-                    <a href="{% url 'ru_onas' %}#stuctures"
-                       class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Структура</a>
-                    <a href="{% url 'ru_onas' %}#chlen"
-                       class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Члены</a>
-                    <a href="{% url 'ru_onas' %}#partner"
-                       class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Партнеры</a>
-                </div>
-            </div>
+            <a href="{% url 'ru_onas' %}"
+               class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">О нас</a>
 
             <div class="w3-dropdown-hover w3-hide-small w3-hide-medium">
                 <button class="w3-padding-24 w3-button w3-hover-light-green">Наши поекты <i
@@ -150,7 +127,6 @@
                     {% for cat in navbar %}
                         <a href="{% url 'ru_category_detail' slug=cat.slug %}"
                            class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">{{ cat.name }}</a>
-                        {#                        <a href="{% url '' %}" class="w3-bar-item w3-button">{{ cat.name }}</a>#}
                     {% endfor %}
 
                 </div>
@@ -162,29 +138,22 @@
                 <div id="2" class="w3-dropdown-content w3-white w3-card w3-bar-block demoAcc">
                     <a href="{% url 'ru_anonsy' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Анонсы</a>
                     <a href="{% url 'ru_category' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Новости</a>
-                    <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Медиа</a>
+                    <a href="{% url 'ru_gallery_list' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Галарея</a>
+                    <a href="{% url 'ru_video_list' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Видео</a>
                 </div>
             </div>
+            <a href="{% url 'ru_chlenstvo' %}"
+               class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Членство</a>
 
-            <div class="w3-dropdown-hover w3-hide-small w3-hide-medium">
-                <button class="w3-padding-24 w3-button w3-hover-light-green">Членство <i
-                        class="fa fa-caret-down"></i></button>
-                <div id="4" class="w3-dropdown-content w3-white w3-card w3-bar-block demoAcc">
-                    <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Ассосиасия член</a>
-                    <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Частный клуб
-                        бизнесменов</a>
-                </div>
-            </div>
-
-            <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Котолог</a>
+            <a href="{% url 'ru_katalog' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Котолог</a>
             <a href="{% url 'ru_contacts' %}"
                class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Контакты</a>
 
             <div class="w3-dropdown-hover">
                 <button class="w3-padding-24 w3-button w3-hover-light-green"><i
-                        class="fas fa-globe-asia"></i></button>
+                        class="fa fa-globe"></i></button>
                 <div id="5" class="w3-dropdown-content w3-white w3-card w3-bar-block demoAcc">
-                    <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">RU</a>
+                    <a href="{% url 'ru_news_list' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">RU</a>
                     <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">EN</a>
                 </div>
             </div>
@@ -199,9 +168,10 @@
     <div id="search" class="overlay">
         <span class="closebtn" onclick="closeOverlay('search')" title="Close Overlay">x</span>
         <div class="overlay-content">
-            <form>
-                <input type="text" placeholder="Искать..">
-                <button type="submit" class="w3-green w3-hover-black"><i class="fa fa-search"></i></button>
+            <form method="get" action="{% url 'ru_search' %}">
+                <input type="text" name="q" placeholder="Искать..">
+                <button type="submit" style="width: 20%;" class="w3-green w3-hover-black"><i class="fa fa-search"></i>
+                </button>
             </form>
         </div>
     </div>
@@ -212,7 +182,7 @@
 
     <div class="w3-bar w3-display-topleft logo">
         <a href="/" class="w3-bar-item  ">
-            <img class="w3-left" src="{% static 'img/LOGO.png' %}" alt="" style="width: 100%; height: 100%;">
+            <img class="w3-left" src="{% static 'img/MAPEF_LOGO.png' %}" alt="" style="width: 100%; height: 100%;">
         </a>
     </div>
 </navbar>
@@ -224,9 +194,16 @@
     <div class="w3-third">
         <h3 class="w3-text-green">О НАС</h3>
         <hr class="hr">
-        <p>Бизнес-ассоциация JIA -площадка для предпринимателей, которые ведут деятельность на отечественных и на
-            международных рынках. Ассоциация более 12 лет активно помогает отечественному бизнесу в развитии
-            предпринимательской деятельности в разных секторах</p><br>
+        <p>МАПЭФ - это площадка и мост для предпринимателей, инвесторов которые ведут деятельность на отечественных и на
+            международных рынках. Ассоциация активно помогает в содействии развития исламского бизнеса на международных
+            аренах</p><br>
+        <br>
+        <div class="w3-xxlarge">
+            <a href="{{ assosiations.facebook }}"><i class="fa fa-facebook-f w3-margin"></i></a>
+            <a href="{{ assosiations.instagram }}"><i class="fa fa-instagram w3-margin"></i></a>
+            <a href="{{ assosiations.youtube }}"><i class="fa fa-youtube w3-margin"></i></a>
+        </div>
+        <br>
         <p><i class="w3-tag">Все права защишены 2019</i></p>
     </div>
 
@@ -237,9 +214,9 @@
             {% for foo in articles_4 %}
 
 
-                <li class="w3-padding-16 w3-hover-green">
+                <li class="w3-padding-16 w3-hover-green" style="cursor: pointer;">
                     <img src="{{ foo.image.url }}" class="w3-left w3-margin-right" style="width:50px">
-                    <span class="w3-large" title="{{ foo.name }}">{{ foo.name|truncatechars:25 }}</span><br>
+                    <a href="{{ foo.get_absolute_url }}" class="w3-large" title="{{ foo.name }}">{{ foo.name|truncatechars:25 }}</a><br>
                 </li>
 
             {% endfor %}
@@ -253,17 +230,16 @@
         <p class="w3-bar-block">
             <button class="w3-bar-item w3-black w3-round-xxlarge">
                 <i class="fa fa-home w3-green w3-padding-large "></i>
-                <span class='w3-padding'> Эркиндик кочосу 26</span>
+                <span class='w3-padding'> {{ assosiations.adres }}</span>
             </button>
             <button class="w3-bar-item w3-black w3-round-xxlarge">
                 <i class="fa fa-phone w3-green w3-padding-large "></i>
-                <span class='w3-padding'> +996 777 875 960</span>
+                <span class='w3-padding'> {{ assosiations.phone }}</span>
             </button>
             <button class="w3-bar-item w3-black w3-round-xxlarge">
-                <i class="fa fa-mail-bulk w3-green w3-padding-large "></i>
-                <span class='w3-padding'> iapef@mail.ru</span>
+                <i class="fa fa-envelope w3-green w3-padding-large "></i>
+                <span class='w3-padding'> {{ assosiations.email }}</span>
             </button>
-
         </p>
     </div>
 </footer>
@@ -281,9 +257,11 @@
     }
 </script>
 <script src="{% static 'js/jquery.js' %}"></script>
-<script src="{% static 'js/owl.carousel.min.js' %}"></script>
-<script src="{% static 'js/carousel.js' %}"></script>
-{% block js %}{% endblock %}
+{% block js %}
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/carousel.js' %}"></script>
+{% endblock %}
 <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
+

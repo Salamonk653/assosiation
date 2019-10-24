@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 # Create your models here.
+from django import template
 from django.core.mail import send_mail, BadHeaderError
-from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
+from django.core.paginator import Paginator
+from django.http import *
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import *
 from django.views.generic.base import ContextMixin
 
-from AssosiationDjango import local_settings
 from post.forms import ContactForm
 from .models import *
 
@@ -18,8 +19,11 @@ class Navbar(ContextMixin):
         merop = get_object_or_404(GlavCategory, name__icontains=u'Наши проекты', language__name__icontains=u'ru')
         context['navbar'] = merop.category_set.filter(language__name__icontains=u'ru')
         context['anonsy'] = get_object_or_404(Category, name__icontains=u'Анонсы', language__name__icontains=u'ru')
-        context['articles_4'] = New.objects.filter(language__name__icontains='ru', is_public=True).order_by('-id')[:5]
+        context['articles_4'] = New.objects.filter(language__name__icontains='ru',
+                                                   category__name__icontains=u'Жаңылыктар', is_public=True).order_by(
+            '-id')[:5]
         context['form'] = ContactForm()
+        context['assosiations'] = OFonde.objects.filter(language__name__icontains='ru').first()
         return context
 
 
@@ -30,7 +34,9 @@ class News(ListView, Navbar):
     def get_context_data(self, *args, **kwargs):
         context = super(News, self).get_context_data(**kwargs)
         context['news'] = New.objects.filter(category__name__iexact=u'Жаңылыктар', language__name__icontains=u'ru',
-                                             is_public=True).order_by('-id')[:4]
+                                             is_public=True).order_by('-id')[:3]
+        context['merop'] = New.objects.filter(category__name__iexact=u'Анонсы', language__name__icontains=u'ru',
+                                              is_public=True).order_by('-id')[:3]
         context['projects'] = New.objects.filter(category__glavcategory__name__icontains=u'Наши проекты',
                                                  language__name__icontains=u'ru', is_public=True).order_by('-id')[:8]
         index = []
@@ -40,6 +46,15 @@ class News(ListView, Navbar):
         context['sliders'] = GlavSlider.objects.filter(language__name__icontains=u'ru')
         context['chlens'] = Chlen_Partner.objects.filter(category__name__iexact=u'Члены')
         context['partners'] = Chlen_Partner.objects.filter(category__name__iexact=u'Партнеры')
+        return context
+
+
+class Podrobnee(TemplateView, Navbar):
+    template_name = 'ru/podrobnee.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(Podrobnee, self).get_context_data(**kwargs)
+        context['h2'] = 'Что дает членство в МАПЭФ?'
         return context
 
 
@@ -77,8 +92,11 @@ class AnonsyDetail(DetailView, Navbar):
 
     def get_context_data(self, *args, **kwargs):
         context = super(AnonsyDetail, self).get_context_data(**kwargs)
-        context['articles'] = self.model.objects.filter(language__name__icontains='ru', is_public=True).order_by('-id')[
-                              :15]
+        context['articles'] = self.model.objects.filter(language__name__icontains='ru',
+                                                        category__name__icontains=u'Жаңылыктар',
+                                                        is_public=True).order_by('-id')[:15]
+        context['projects'] = New.objects.filter(category__glavcategory__name__icontains=u'Наши проекты',
+                                                 language__name__icontains=u'ru', is_public=True).order_by('-id')[:15]
         context['article'] = self.get_object()
         context['h2'] = self.get_object()
         return context
@@ -117,11 +135,23 @@ class ArticleDetail(DetailView, Navbar):
 
     def get_context_data(self, *args, **kwargs):
         context = super(ArticleDetail, self).get_context_data(**kwargs)
-        context['articles'] = self.model.objects.filter(language__name__icontains='ru', is_public=True).order_by('-id')[
-                              :15]
+        context['articles'] = self.model.objects.filter(language__name__icontains='ru',
+                                                        category__name__icontains=u'Жаңылыктар',
+                                                        is_public=True).order_by('-id')[:15]
+        context['projects'] = New.objects.filter(category__glavcategory__name__icontains=u'Наши проекты',
+                                                 language__name__icontains=u'ru', is_public=True).order_by('-id')[:8]
         context['article'] = self.get_object()
         context['ofonde'] = OFonde.objects.filter(language__name__icontains='ru').first()
         context['h2'] = self.get_object()
+        return context
+
+
+class Chlenstvo(TemplateView, Navbar):
+    template_name = 'ru/chlenstvo.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(Chlenstvo, self).get_context_data(**kwargs)
+        context['h2'] = 'Членство'
         return context
 
 
@@ -167,29 +197,34 @@ class UserReactionView(View):
         return JsonResponse(dannyi)
 
 
-from django.shortcuts import render
+class Search(View):
+    template_name = 'ru/search.html'
+    merop = get_object_or_404(GlavCategory, name__icontains=u'Наши проекты', language__name__icontains=u'ru')
+    context = {'assosiations': OFonde.objects.filter(language__name__icontains='ru').first(),
+               'navbar': merop.category_set.filter(language__name__icontains=u'ru'),
+               'anonsy': get_object_or_404(Category, name__icontains=u'Анонсы', language__name__icontains=u'ru'),
+               'articles_4': New.objects.filter(language__name__icontains='ru', category__name__icontains=u'Жаңылыктар',
+                                                is_public=True).order_by('-id')[:5],
+               'form': ContactForm(),
+               }
 
+    # context = {}
 
-# from .documents import PostDocument
+    def get(self, request):
+        self.context['h2'] = 'ПОИСК'
+        self.context['text'] = 'Мы искали, но у вы!'
 
-
-def search(request):
-    context = {}
-    q = request.GET.get('q')
-
-    if q:
-        # context['posts'] = PostDocument.search().query("match", name=q)
-        context['posts'] = New.objects.filter(name__icontains=q, language__name__icontains='ru')
-    else:
-        context['posts'] = ''
-
-    context['ofonde'] = OFonde.objects.filter(language__name__icontains='ru').first()
-    return render(request, 'ru/search/search.html', context)
+        q = request.GET.get('q')
+        if q:
+            self.context['posts'] = New.objects.filter(name__icontains=q, language__name__icontains='ru')
+        else:
+            self.context['posts'] = ''
+        # return context
+        return render(request, self.template_name, self.context)
 
 
 def contact_form(request):
     sent = False
-    mailfrom = local_settings.EMAIL_HOST_USER
     mailto = ['salamonk653@gmail.com']
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -198,9 +233,7 @@ def contact_form(request):
             email = form.cleaned_data['email']
             phone = form.cleaned_data['phone']
             subject = u'МАПЭФ - Новое письмо от {}'.format(name)
-            # subject = u'МАПЭФ - Новое письмо от {}' + name
             message = u'Емайл: {}. Телефон: {}'.format(email, phone)
-            # send_mail(subject, message, mailfrom, mailto)
             sent = True
             try:
                 send_mail(subject, message, 'sulaiman.97_kg@mail.ru', mailto)
@@ -211,25 +244,32 @@ def contact_form(request):
         form = ContactForm()
     return render(request, 'ru/index.html', {'forms': form, 'sent': sent})
 
-    # if request.method == 'POST':
-    #     form = ContactForm(request.POST)
-    #     # Если форма заполнена корректно, сохраняем все введённые пользователем значения
-    #     if form.is_valid():
-    #         subject = form.cleaned_data['name']
-    #         sender = form.cleaned_data['email']
-    #         message = form.cleaned_data['phone']
-    #
-    #         text = 'Salam ' + sender + ' phone ' + message
-    #         recepients = ['salamonk653@gmail.com']
-    #         # Если пользователь захотел получить копию себе, добавляем его в список получателей
-    #         try:
-    #             send_mail(subject, text, 'sulaiman.97_kg@mail.ru', recepients)
-    #         except BadHeaderError:  # Защита от уязвимости
-    #             return HttpResponse('Invalid header found')
-    #         # Переходим на другую страницу, если сообщение отправлено
-    #         return HttpResponseRedirect('/')
-    #
-    # else:
-    #     form = ContactForm()
-    #     # Выводим форму в шаблон
-    # return render(request, 'ru/index.html', {'form': form})
+
+class Katalog(TemplateView, Navbar):
+    template_name = 'ru/katolog.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(Katalog, self).get_context_data(**kwargs)
+        context['h2'] = 'КАТАЛОГ'
+        glavnyi = GlavCategoryForKatalog.objects.filter(language__name__icontains=u'ru')
+        context['glavnyi'] = glavnyi
+        return context
+
+
+class KatalogDetail(Search):
+    template_name = 'ru/katolog_detail.html'
+
+    def get(self, request, slug):
+        glavnyi = PostForKatalog.objects.filter(category__glavcategory__slug__icontains=slug,
+                                                language__name__icontains=u'ru') or PostForKatalog.objects.filter(
+            category__slug__icontains=slug,
+            language__name__icontains=u'ru')
+        paginator = Paginator(glavnyi, 10)
+        page_number = request.GET.get('page', 1)
+        page = paginator.page(page_number)
+        self.context['page_obj'] = page
+        self.context['is_paginated'] = page.has_other_pages()
+        self.context['h2'] = 'КАТАЛОГ'
+        self.context['glavnyi'] = glavnyi
+        self.context['test'] = ''''''
+        return render(request, self.template_name, self.context)

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block css %}
+{% endblock %}
+{% block title %}
+    {{ h2|upper }}
+{% endblock %}
+{% block js %}
+{% endblock %}
+{% block content %}
+    {% include 'generic/h2.html' %}
+    <br><br><br>
+    <div class="ss w3-margin w3-center">
+        <h3>
+            <b>Почему выгодно и важно стать приверженцем принципов и ценностей <span class="w3-text-green">Бизнес-ассоциации JIA и вступить в
+                членство?</span></b>
+        </h3>
+
+        <p>Присоединяясь к сообществу прогрессивных предпринимателей Кыргызстана через участие в деятельности ассоциации
+            JIA, бизнесмены получают возможность защиты и продвижения своих интересов на государственном и локальном
+            уровнях, доступа к обширным контактам и связям в деловой среде. Гибкая политика в деятельности ассоциации
+            построена с учетом гендерных аспектов и нацелена на восприятие самых передовых мировых процессов ведения
+            бизнеса. Членство в JIA позволяет содействовать успешному развитию бизнес-среды в Кыргызстане для выработки
+            собственных национальных стандартов ведения бизнеса.</p>
+    <hr class="hr w3-margin">
+
+    </div><br><br><br>
+    <div class="w3-row-padding w3-margin">
+        <div class="w3-half">
+            <div class="w3-margin">
+                <h2 class="w3-center w3-margin w3-text-green"><b>Как вступить в <span class="w3-text-black">МАПЭФ?</span></b></h2>
+                <p class="w3-margin">
+                    <p>Для вступления в ассоциацию необходимо сделать 2 простых шага:</p>
+                <br>
+                    <p>1) заполнить форму, с указанием: ФИО, номера телефона, адреса электронной почты;</p><br>
+
+                    <p>2) отправить заполненную форму. Наши сотрудники обязательно свяжется с вами в
+                    течении одного часа</p><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="w3-half">
+            <div class="w3-margin">
+                <div class="w3-card-4">
+                    <div class="w3-container w3-green">
+                        <h2 class="w3-center">Контактные данные</h2>
+                    </div>
+
+                    <form class="w3-container w3-margin" action="{% url 'ru_contact_form' %}" method="post">{% csrf_token %}
+                        <p>
+                            <input class="w3-input" type="text" name="name" required>
+                            <label>Ваше имя</label></p>
+                        <p>
+                            <input class="w3-input" type="text" name="phone" required>
+                            <label>Телефонный номер</label>
+                        </p>
+                        <p>
+                            <input class="w3-input" type="text" name="email" required>
+                            <label>Электронная почта</label>
+                        </p>
+                        <input type="submit" class="w3-green w3-button w3-margin-top w3-margin-bottom w3-right w3-hover-black w3-round" >
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <style>
+        .top-zagolov {
+            font-size: 6vw;
+        }
+    </style>
+{% endblock %}

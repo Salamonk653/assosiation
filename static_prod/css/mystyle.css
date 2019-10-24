@@ -1,15 +1,19 @@
 /*SLIDE SHOW*/
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
+    /*padding: 0!important;*/
+    /*margin: 0!important;*/
 }
 
 h2 {
     font-size: 4vw;
+    margin: 0;
 }
 
 body {
     font-family: Verdana, sans-serif;
-    margin: 0
+    margin: 0;
+    max-width: 1366px;
 }
 
 .mySlides {
@@ -219,7 +223,6 @@ section {
 }
 
 
-
 .test:before {
     content: '';
     position: absolute;
@@ -228,7 +231,12 @@ section {
     height: 80px;
     width: 115%;
     left: -8%;
-    bottom: -27%;
+    bottom: -19%;
+}
+
+.novosti-content {
+    min-height: 300px;
+    overflow: hidden;
 }
 
 .white {
@@ -328,7 +336,6 @@ section {
 }
 
 
-
 .project-text {
     margin: 3% 10% 3% 10%;
 }
@@ -426,7 +433,7 @@ section {
 
 /* Style the form icons */
 .icon {
-    padding: 5%;
+    padding: 15px;
     background: #71c827;
     color: white;
     min-width: 50px;
@@ -563,10 +570,9 @@ section {
     border-radius: 15% !important;
 }
 
-.top-banner {
-    background: #71c827 center url("../img/cont-page.png") no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+.top-zagolov {
+        padding-top: 200px;
+        padding-left: 150px;
+        padding-right: 150px;
+        font-size: 2vw;
+    }

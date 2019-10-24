@@ -231,7 +231,12 @@ section {
     height: 80px;
     width: 115%;
     left: -8%;
-    bottom: -27%;
+    bottom: -19%;
+}
+
+.novosti-content {
+    min-height: 300px;
+    overflow: hidden;
 }
 
 .white {
@@ -565,3 +570,9 @@ section {
     border-radius: 15% !important;
 }
 
+.top-zagolov {
+        padding-top: 200px;
+        padding-left: 150px;
+        padding-right: 150px;
+        font-size: 2vw;
+    }

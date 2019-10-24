@@ -9,3 +9,7 @@ class ContactForm(forms.Form):
     email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': u'Емейл', 'class': 'input-field'}))
     phone = forms.CharField(max_length=100,
                             widget=forms.TextInput(attrs={'class': 'input-field', 'placeholder': u'Телефон'}))
+
+
+class SearchForm(forms.Form):
+    q = forms.CharField(max_length=250, widget=forms.TextInput(attrs={'class': 'input-field'}))

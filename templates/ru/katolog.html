@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% load category %}
+{% block css %}
+{% endblock %}
+{% block title %}
+    {{ h2|upper }}
+{% endblock %}
+{% block js %}
+{% endblock %}
+{% block content %}
+    {% include 'generic/h2.html' %}
+    <br><br><br>
+    <div class="w3-containner sss">
+        <div class="w3-row-padding">
+            {% for glav in glavnyi %}
+
+                <div class="w3-half w3-margin-top">
+                    <a href="{% url 'ru_katalog_detail' slug=glav.slug %}">
+                        <h3 class="w3-hover-text-black glav-katalog w3-text-green"><i
+                                class="{{ glav.style }}"></i> {{ glav }}</h3>
+                    </a>
+                    <hr class="hr">
+
+
+                    <p>
+                        {% for podglav in glav.slug|category_set %}
+                            <a href="{% url 'ru_katalog_detail' slug=podglav.slug %}"
+                               class="w3-padding-16 w3-hover-text-green">{{ podglav }}, </a>
+
+                        {% endfor %}
+                    </p>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <style>
+        .sss {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        .glav-katalog {
+            font-size: 2.5vw;
+        }
+
+        .top-zagolov {
+            font-size: 5vw;
+        }
+
+        @media screen and (max-width: 480px) {
+            .glav-katalog {
+                font-size: 7vw;
+            }
+        }
+
+        @media screen and (max-width: 780px) {
+            .glav-katalog {
+                font-size: 3vw;
+            }
+        }
+
+    </style>
+    <br><br><br>
+{% endblock %}

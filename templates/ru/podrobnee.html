@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% block css %}
+{% endblock %}
+{% block title %}
+    {{ h2|upper }}
+{% endblock %}
+{% block js %}
+{% endblock %}
+{% block content %}
+    {% include 'generic/h2.html' %}
+    <div class="podrobnee-banner w3-container">
+        <div style="margin-top: 2%">
+            <div class="w3-center zagolov w3-margin-bottom">
+                <b class="w3-center">ВОЗМОЖНОСТИ В <span class="w3-text-light-green">МАПЭФ</span></b>
+            </div>
+
+
+            <br>{% load staticfiles %}
+            <div class="w3-row-padding w3-margin-top banner-row" style="">
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-info"></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>ИНФОРМАЦИЯ</b></h3>
+                        <p class="w3-text-grey">Законодательство КР <br>
+                            Стандарты Шариата (AAOIFI)<br>
+                            Стандарты «халал»<br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-handshake-o"></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>ИНВЕСТИЦИИ</b></h3>
+                        <p class="w3-text-grey">
+                            Государственные программы<br>
+                            Частные инвестиции<br>
+                            Гранты<br>
+                            <br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-address-card" style=""></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>ДЕЛОВЫЕ КОНТАКТЫ</b></h3>
+                        <p class="w3-text-grey">Госорганы <br>
+                            Международные партнеры<br>
+                            Бизнес-сообщество<br>
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-object-group" style=""></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>ТРАНСФОРМАЦИЯ ДЕЯТЕЛЬНОСТИ</b></h3>
+                        <p class="w3-text-grey">
+                            Приведение деятельности в полное соответствие стандартам и нормам Шариата
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-sitemap" style=""></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>НОВЫЕ РЫНКИ</b></h3>
+                        <p class="w3-text-grey">
+                            Выход на внутренний рынок <br>
+                            Выход на внешний рынок <br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-list-alt" style=""></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>ТРЕНИНГИ</b></h3>
+                        <p class="w3-text-grey">
+                            Бизнес планирование, управление
+                            Финансовая грамотность и т.д.
+
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+    <div class="w3-center zagolov w3-margin-bottom w3-container">
+        <h2>
+            <b class="w3-center">ЕСЛИ ВАС <span class="w3-text-light-green">ЗАИНТЕРЕСОВАЛА</span> ЗАПОЛНИТЕ
+                <span class="w3-text-light-green">ФОРМУ</span></b>
+        </h2>
+    </div>
+    <div class="w3-row-padding w3-margin">
+        <div class="w3-half">
+            <div class="w3-margin">
+                <h2 class="w3-center w3-margin w3-text-green"><b>Как вступить в <span
+                        class="w3-text-black">МАПЭФ?</span></b></h2>
+                <p class="w3-margin">
+                <p>Для вступления в ассоциацию необходимо сделать 2 простых шага:</p>
+                <br>
+                <p>1) заполнить форму, с указанием: ФИО, номера телефона, адреса электронной почты;</p><br>
+
+                <p>2) отправить заполненную форму. Наши сотрудники обязательно свяжется с вами в
+                    течении одного часа</p><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="w3-half">
+            <div class="w3-margin">
+                <div class="w3-card-4">
+                    <div class="w3-container w3-green">
+                        <h2 class="w3-center">Контактные данные</h2>
+                    </div>
+
+                    <form class="w3-container w3-margin" action="{% url 'ru_contact_form' %}"
+                          method="post">{% csrf_token %}
+                        <p>
+                            <input class="w3-input" type="text" name="name" required>
+                            <label>Ваше имя</label></p>
+                        <p>
+                            <input class="w3-input" type="text" name="phone" required>
+                            <label>Телефонный номер</label>
+                        </p>
+                        <p>
+                            <input class="w3-input" type="text" name="email" required>
+                            <label>Электронная почта</label>
+                        </p>
+                        <input type="submit"
+                               class="w3-green w3-button w3-margin-top w3-margin-bottom w3-right w3-hover-black w3-round">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <style>
+        .krug {
+            width: 30%;
+            height: auto;
+            border-radius: 50%;
+            padding: 50px;
+            position: relative;
+        }
+
+        .krug i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .podrobnee-banner {
+            width: 100%;
+            background: white url("{% static 'img/logo_for_mobaile 3.png' %}") no-repeat right 50%;
+            background-size: 480px 480px;
+        }
+
+        .banner-row {
+            width: 70%;
+        }
+
+        .top-zagolov {
+            font-size: 4vw;
+        }
+        .boluk {
+            height: 360px;
+            border: #0f74a8;
+        }
+
+    @media screen and (max-width:480px) {
+        .podrobnee-banner {
+            background: white;
+        }
+        .banner-row {
+            width: 100%;
+        }
+        .boluk {
+            width: 50%;
+        }
+    }
+
+    @media screen and (max-width:680px) {
+        .podrobnee-banner {
+            background: white;
+        }
+        .banner-row {
+            width: 100%;
+        }
+        .boluk {
+            width: 50%;
+        }
+    }
+    </style>
+{% endblock %}

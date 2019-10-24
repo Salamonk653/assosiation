@@ -56,52 +56,11 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'post',
+    'media_gallery',
     'django_cleanup',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
 ]
-
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-]
-
-SOCIALACCOUNT_PROVIDERS = \
-    {'facebook':
-         {'METHOD': 'oauth2',
-          'SCOPE': ['email', 'public_profile', 'user_friends'],
-          'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-          'FIELDS': [
-              'id',
-              'email',
-              'name',
-              'picture.type(large)',
-              'first_name',
-              'last_name',
-              'verified',
-              'locale',
-              'timezone',
-              'link',
-              'gender',
-              'updated_time'],
-          'EXCHANGE_TOKEN': True,
-          'LOCALE_FUNC': lambda request: 'ru_RU',
-          'VERIFIED_EMAIL': False,
-          'VERSION': 'v2.4'}}
 
 SITE_ID = 1
-
-SOCIALACCOUNT_QUERY_EMAIL = True
-
-LOGIN_REDIRECT_URL = "news_list"
-LOGOUT_URL = "logout"
-
-LOGIN_URL = 'news_list'
-LOGOUT_REDIRECT_URL = 'news_list'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,5 +1,5 @@
 <div class="top-banner">
-    <h2 class="top-zagolov w3-text-white"><b>{{ h2 }}</b>
+    <h2 class="top-zagolov w3-text-white"><b>{{ h2|upper }}</b>
         <hr class="hr">
     </h2>
 
@@ -12,14 +12,9 @@
         background: #71c827 center url("{% static 'img/cont-page.png' %} ") no-repeat;
         {#background: #71c827 center url("../img/cont-page.png") no-repeat;#}
         background-size: cover;
-        min-height: 300px;
+        {#min-height: 300px;#}
     }
 
-    .top-zagolov {
-        padding-top: 200px;
-        padding-left: 150px;
-        padding-right: 150px;
-        font-size: 2vw;
-    }
+
 
 </style>
