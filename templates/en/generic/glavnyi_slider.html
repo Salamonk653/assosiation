@@ -1,0 +1,62 @@
+<div class="slider ">{% load staticfiles %}
+
+    <!--- OWL-CArousel --->
+    <div class="owl-carousel owl-theme">
+
+        {% for foo in sliders %}
+            <div class="owl-slide d-flex glav-slide-container align-items-center cover"
+                 style="background: url({% static 'img/MAPEF_SLIDER_MASKA.png' %}) left no-repeat,url({{ foo.image.url }}) center no-repeat;background-size: cover,cover;">
+                <div class="container" style="">
+                    <div class="row justify-content-center justify-content-md-start">
+                        <div class="col-10 col-md-6 static">
+                            <div class="owl-slide-text w3-text-white"><br><br>
+                                <h2 class="owl-slide-animated" style="line-height: 1">{{ foo.name }}</h2><br>
+                                <div class="owl-slide-animated owl-slide-subtitle mb-3">
+                                    {{ foo.text }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/owl-slide-->
+        {% endfor %}
+
+    </div>
+
+
+    <section class="section">
+        <div class="container w3-text-white">
+            <div class="row">
+                <div class="ss">
+                    <div class="w3-margin w3-center w3-text-black">
+                        <div class="zagolov w3-margin-bottom">
+                            <b class="w3-center">WHAT IS <span class="w3-text-white">IAPEF?</span></b>
+                        </div>
+                    </div>
+                    <div class="w3-margin">
+                        <div class="ss w3-center">
+                            <p class="w3-panel w3-leftbar"> "IAPEF is an association of legal entities established with
+                                The goal of the development of the Islamic economy,
+                                business, and industry in Kyrgyzstan and in the world. You can get detailed information
+                                through the video."
+                            </p>
+
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+                <div class="w3-border-white" style="width:100%;margin-bottom: -20%;">
+                    <div class="">
+                        <div style="width:100%;border: 20px solid white;" class="">
+                            <iframe style="width: 100%;height: 100vh;" src="https://www.youtube.com/embed/1wrwssjdGTY"
+                                    frameborder="0"
+                                    allowfull></iframe>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>

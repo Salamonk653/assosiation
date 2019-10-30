@@ -1,0 +1,62 @@
+{% extends 'en/base.html' %}
+{% block css %}
+{% endblock %}
+{% block title %}
+    {{ h2|upper }}
+{% endblock %}
+{% block js %}
+{% endblock %}
+{% block content %}
+    {% include 'generic/h2.html' %}
+    <div class="w3-row-padding w3-light-gray">
+
+        <div class="w3-third " style="">
+            <div class="w3-bar-block w3-white w3-padding-large">
+                {% for foo in fond %}
+                    <button id="Fade1" class="w3-bar-item w3-button w3-mobile tablink w3-padding-large"
+                            onclick="openLink(event, '{{ foo.name }}')">
+                        <b>{{ foo.name }}</b>
+                    </button>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="w3-twothird ">
+            <div class="w3-white w3-padding-large">
+                {% for foo in fond %}
+                    <div id="{{ foo.name }}" class="w3-padding-large city w3-animate-zoom" style="display:none">
+                        <h2>{{ foo.name }}</h2>
+                        <hr class="hr">
+                        <p>{{ foo.text }}</p>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <script>
+            function openLink(evt, animName) {
+                var i, x, tablinks;
+                x = document.getElementsByClassName("city");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < x.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" w3-green", "");
+                }
+                document.getElementById(animName).style.display = "block";
+                evt.currentTarget.className += " w3-green";
+            }
+
+            document.getElementById("Fade1").click();
+        </script>
+    </div>
+
+    <style>
+        .top-zagolov {
+            font-size: 6vw;
+        }
+    </style>
+{% endblock %}

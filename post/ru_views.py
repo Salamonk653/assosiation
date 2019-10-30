@@ -174,29 +174,6 @@ class Onas(TemplateView, Navbar):
         return context
 
 
-class UserReactionView(View):
-    template_name = 'ru/new_list_detail.html'
-
-    def get(self, request, *args, **kwargs):
-        article_id = self.request.GET.get('article_id')
-        article = New.objects.get(id=article_id)
-        like = self.request.GET.get('like')
-        dislike = self.request.GET.get('dislike')
-        if like and (request.user not in article.user_rection.all()):
-            article.likes += 1
-            article.user_rection.add(request.user)
-            article.save()
-        if dislike and (request.user not in article.user_rection.all()):
-            article.dislikes += 1
-            article.user_rection.add(request.user)
-            article.save()
-        dannyi = {
-            'likes': article.likes,
-            'dislikes': article.dislikes
-        }
-        return JsonResponse(dannyi)
-
-
 class Search(View):
     template_name = 'ru/search.html'
     merop = get_object_or_404(GlavCategory, name__icontains=u'Наши проекты', language__name__icontains=u'ru')

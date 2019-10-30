@@ -2,8 +2,8 @@
 <html lang="en">{% load staticfiles %}
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Международная Ассосиация Партнерской Экономики и Финансов | Главная страница{% endblock %} |
-        МАПЭФ</title>
+    <title>{% block title %}International Association of Partnership Economics and Finance | Main page{% endblock %} |
+        IAPEF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{% static 'img/logo1.png' %}">
     {% block css %}
@@ -21,8 +21,8 @@
 <div id="vstupit-modal" class="overlay">
     <span class="closebtn" onclick="closeOverlay('vstupit-modal')" title="Close Overlay">x</span>
     <div class="overlay-content fa" style="top: 28%;">
-        <form action="{% url 'ru_contact_form' %}" method="post">{% csrf_token %}
-            <h2 class="w3-text-white">Форма обратной связи</h2>
+        <form action="{% url 'en_contact_form' %}" method="post">{% csrf_token %}
+            <h2 class="w3-text-white">Feedback form</h2><br>
             <div class="input-container">
                 <i class="fa fa-user icon w3-green"></i>
                 {{ form.name }}
@@ -37,7 +37,7 @@
                 <i class="fa fa-key icon w3-green"></i>
                 {{ form.phone }}
             </div>
-            <button type="submit" class="btn w3-green">Отправить</button>
+            <button type="submit" class="btn w3-green">Submit</button>
         </form>
 
     </div>
@@ -81,33 +81,34 @@
             <img src="{% static 'img/logo_for_mobaile 3.png' %}" alt="" width="100%">
         </div>
 
-        <a href="{% url 'ru_onas' %}" class="w3-bar-item w3-hover-text-green">О нас</a>
+        <a href="{% url 'en_onas' %}" class="w3-bar-item w3-hover-text-green">About Us</a>
 
         <div class="1">
-            <button class="w3-hover-text-green w3-bar-item w3-black" onclick="myAccFunc('dem2')">Наши поекты <i
+            <button class="w3-hover-text-green w3-bar-item w3-black" onclick="myAccFunc('dem2')">Our projects <i
                     class="fa fa-caret-down"></i></button>
             <div id="dem2" class="w3-hide w3-bar-block">
                 {% for cat in navbar %}
-                    <a href="{% url 'ru_category_detail' slug=cat.slug %}"
+                    <a href="{% url 'en_category_detail' slug=cat.slug %}"
                        class="w3-bar-item w3-hover-text-green" style="padding-left: 20%">{{ cat.name }}</a>
                 {% endfor %}
 
             </div>
         </div>
         <div class="1">
-            <button class="w3-hover-text-green w3-bar-item w3-black" onclick="myAccFunc('dem3')">Мероприятия <i
+            <button class="w3-hover-text-green w3-bar-item w3-black" onclick="myAccFunc('dem3')">Events <i
                     class="fa fa-caret-down"></i></button>
             <div id="dem3" class="w3-hide w3-bar-block w3-card-4">
-                <a href="{% url 'ru_anonsy' %}" class="w3-bar-item w3-hover-text-green"
-                   style="padding-left: 20%">Анонсы</a>
-                <a href="{% url 'ru_category' %}" class="w3-bar-item w3-hover-text-green" style="padding-left: 20%">Новости</a>
-                <a href="{% url 'ru_gallery_list' %}" class="w3-bar-item w3-hover-text-green" style="padding-left: 20%">Галарея</a>
-                <a href="{% url 'ru_video_list' %}" class="w3-bar-item w3-hover-text-green" style="padding-left: 20%">Видео</a>
+                <a href="{% url 'en_anonsy' %}" class="w3-bar-item w3-hover-text-green"
+                   style="padding-left: 20%">Announcements</a>
+                <a href="{% url 'en_category' %}" class="w3-bar-item w3-hover-text-green"
+                   style="padding-left: 20%">News</a>
+                <a href="{% url 'en_gallery_list' %}" class="w3-bar-item w3-hover-text-green" style="padding-left: 20%">Gallery</a>
+                <a href="{% url 'en_video_list' %}" class="w3-bar-item w3-hover-text-green" style="padding-left: 20%">Video</a>
             </div>
         </div>
-        <a href="{% url 'ru_chlenstvo' %}" class="w3-bar-item w3-hover-text-green">Членство</a>
-        <a href="{% url 'ru_katalog' %}" class="w3-bar-item w3-hover-text-green">Котолог</a>
-        <a href="{% url 'ru_contacts' %}" class="w3-bar-item w3-hover-text-green">Контакты</a>
+        <a href="{% url 'en_chlenstvo' %}" class="w3-bar-item w3-hover-text-green">Membership</a>
+        <a href="{% url 'en_katalog' %}" class="w3-bar-item w3-hover-text-green">Switch</a>
+        <a href="{% url 'en_contacts' %}" class="w3-bar-item w3-hover-text-green">Contacts</a>
     </div>
     <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
@@ -117,15 +118,16 @@
             <a class="w3-bar-item w3-button w3-padding-24 w3-hide-large w3-right w3-hover-light-green"
                href="javascript:void(0);" onclick="w3_open()"><i class="fa fa-bars"></i></a>
 
-            <a href="{% url 'ru_onas' %}"
-               class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">О нас</a>
+            <a href="{% url 'en_onas' %}"
+               class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">About
+                Us</a>
 
             <div class="w3-dropdown-hover w3-hide-small w3-hide-medium">
-                <button class="w3-padding-24 w3-button w3-hover-light-green">Наши поекты <i
+                <button class="w3-padding-24 w3-button w3-hover-light-green">Our projects <i
                         class="fa fa-caret-down"></i></button>
                 <div id="1" class="w3-dropdown-content w3-white w3-card w3-bar-block demoAcc">
                     {% for cat in navbar %}
-                        <a href="{% url 'ru_category_detail' slug=cat.slug %}"
+                        <a href="{% url 'en_category_detail' slug=cat.slug %}"
                            class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">{{ cat.name }}</a>
                     {% endfor %}
 
@@ -133,28 +135,31 @@
             </div>
 
             <div class="w3-dropdown-hover w3-hide-small w3-hide-medium">
-                <button class="w3-padding-24 w3-button w3-hover-light-green">Мероприятия <i
+                <button class="w3-padding-24 w3-button w3-hover-light-green">Events <i
                         class="fa fa-caret-down"></i></button>
                 <div id="2" class="w3-dropdown-content w3-white w3-card w3-bar-block demoAcc">
-                    <a href="{% url 'ru_anonsy' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Анонсы</a>
-                    <a href="{% url 'ru_category' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Новости</a>
-                    <a href="{% url 'ru_gallery_list' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Галарея</a>
-                    <a href="{% url 'ru_video_list' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Видео</a>
+                    <a href="{% url 'en_anonsy' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Announcements</a>
+                    <a href="{% url 'en_category' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">News</a>
+                    <a href="{% url 'en_gallery_list' %}"
+                       class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Gallery</a>
+                    <a href="{% url 'en_video_list' %}"
+                       class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">Video</a>
                 </div>
             </div>
-            <a href="{% url 'ru_chlenstvo' %}"
-               class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Членство</a>
+            <a href="{% url 'en_chlenstvo' %}"
+               class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Membership</a>
 
-            <a href="{% url 'ru_katalog' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Котолог</a>
-            <a href="{% url 'ru_contacts' %}"
-               class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Контакты</a>
+            <a href="{% url 'en_katalog' %}"
+               class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Switch</a>
+            <a href="{% url 'en_contacts' %}"
+               class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green w3-hide-small w3-hide-medium">Contacts</a>
 
             <div class="w3-dropdown-hover">
                 <button class="w3-padding-24 w3-button w3-hover-light-green"><i
                         class="fa fa-globe"></i></button>
                 <div id="5" class="w3-dropdown-content w3-white w3-card w3-bar-block demoAcc">
                     <a href="{% url 'ru_news_list' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">RU</a>
-                    <a href="#" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">EN</a>
+                    <a href="{% url 'en_news_list' %}" class="w3-bar-item w3-padding-24 w3-button w3-hover-light-green">EN</a>
                 </div>
             </div>
 
@@ -168,8 +173,8 @@
     <div id="search" class="overlay">
         <span class="closebtn" onclick="closeOverlay('search')" title="Close Overlay">x</span>
         <div class="overlay-content">
-            <form method="get" action="{% url 'ru_search' %}">
-                <input type="text" name="q" placeholder="Искать..">
+            <form method="get" action="{% url 'en_search' %}">
+                <input type="text" name="q" placeholder="Search..">
                 <button type="submit" style="width: 20%;" class="w3-green w3-hover-black"><i class="fa fa-search"></i>
                 </button>
             </form>
@@ -181,8 +186,8 @@
     </b>
 
     <div class="w3-bar w3-display-topleft logo">
-        <a href="/" class="w3-bar-item  ">
-            <img class="w3-left" src="{% static 'img/MAPEF_LOGO.png' %}" alt="" style="width: 100%; height: 100%;">
+        <a href="{% url 'en_news_list' %}" class="w3-bar-item  ">
+            <img class="w3-left" src="{% static 'img/MAPEF_LOGO_EN.png' %}" alt="" style="width: 100%; height: 100%;">
         </a>
     </div>
 </navbar>
@@ -192,11 +197,11 @@
 {% endautoescape %}
 <footer class="w3-row-padding w3-padding-32 w3-black">
     <div class="w3-third">
-        <h3 class="w3-text-green">О НАС</h3>
+        <h3 class="w3-text-green">ABOUT US</h3>
         <hr class="hr">
-        <p>МАПЭФ - это площадка и мост для предпринимателей, инвесторов которые ведут деятельность на отечественных и на
-            международных рынках. Ассоциация активно помогает в содействии развития исламского бизнеса на международных
-            аренах</p><br>
+        <p>IAPEF is a platform and bridge for entrepreneurs, investors who operate in domestic and international
+            markets. The Association actively helps in promoting the development of Islamic business in international
+            arenas</p><br>
         <br>
         <div class="w3-xxlarge">
             <a href="{{ assosiations.facebook }}"><i class="fa fa-facebook-f w3-margin"></i></a>
@@ -204,11 +209,11 @@
             <a href="{{ assosiations.youtube }}"><i class="fa fa-youtube w3-margin"></i></a>
         </div>
         <br>
-        <p><i class="w3-tag">Все права защишены 2019</i></p>
+        <p><i class="w3-tag">All rights reserved 2019</i></p>
     </div>
 
     <div class="w3-third">
-        <h3 class="w3-text-green">ПОСЛЕДНИЕ НОВОСТИ</h3>
+        <h3 class="w3-text-green">LATEST NEWS</h3>
         <hr class="hr">
         <ul class="w3-ul w3-hoverable">
             {% for foo in articles_4 %}
@@ -216,7 +221,8 @@
 
                 <li class="w3-padding-16 w3-hover-green" style="cursor: pointer;">
                     <img src="{{ foo.image.url }}" class="w3-left w3-margin-right" style="width:50px">
-                    <a href="{{ foo.get_absolute_url }}" class="w3-large" title="{{ foo.name }}">{{ foo.name|truncatechars:25 }}</a><br>
+                    <a href="{{ foo.get_absolute_url }}" class="w3-large"
+                       title="{{ foo.name }}">{{ foo.name|truncatechars:25 }}</a><br>
                 </li>
 
             {% endfor %}
@@ -225,7 +231,7 @@
     </div>
 
     <div class="w3-third kontakty">
-        <h3 class="w3-text-green">КОНТАКТЫ</h3>
+        <h3 class="w3-text-green">CONTACTS</h3>
         <hr class="hr">
         <p class="w3-bar-block">
             <button class="w3-bar-item w3-black w3-round-xxlarge">

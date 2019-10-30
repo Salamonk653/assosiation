@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'ru/base.html' %}
 {% block title %}
     {{ h2|upper }}
 {% endblock %}
@@ -20,11 +20,9 @@
                                      background-size: cover;">
                         </div>
                         <div class="w3-container">
-                            {% if album.name %}
-                                <b title="{{ album.name }}"><a href="{{ album.get_absolute_url }}"
-                                      class="w3-hover-text-green">{{ album.name|truncatechars:35 }}</a></b>
+                                <b title="{{ album.ru_name }}"><a href="{{ album.ru_get_absolute_url }}"
+                                      class="w3-hover-text-green">{{ album.ru_name|truncatechars:35 }}</a></b>
                                 <hr class="hr" style="margin-top: 2%">
-                            {% endif %}
                         </div>
                     </div>
                 </div>

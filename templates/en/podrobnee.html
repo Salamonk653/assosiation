@@ -1,0 +1,233 @@
+{% extends 'en/base.html' %}
+{% block css %}
+{% endblock %}
+{% block title %}
+    {{ h2|upper }}
+{% endblock %}
+{% block js %}
+{% endblock %}
+{% block content %}
+    {% include 'generic/h2.html' %}
+    <div class="podrobnee-banner w3-container">
+        <div style="margin-top: 2%">
+            <div class="w3-center zagolov w3-margin-bottom">
+                <b class="w3-center">OPPORTUNITIES IN <span class="w3-text-light-green">IAPEF</span></b>
+            </div>
+
+
+            <br>{% load staticfiles %}
+            <div class="w3-row-padding w3-margin-top banner-row" style="">
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-info"></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>INFORMATION</b></h3>
+                        <p class="w3-text-grey">Legislation of the Kyrgyz Republic <br>
+                            Shariah Standards (AAOIFI)<br>
+                            Halal Standards<br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-handshake-o"></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>INVESTMENTS</b></h3>
+                        <p class="w3-text-grey">
+                            Government programs<br>
+                            Private investment<br>
+                            Grants<br>
+                            <br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-address-card" style=""></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>BUSINESS CONTACTS</b></h3>
+                        <p class="w3-text-grey">State bodies <br>
+                            International partners<br>
+                            Business community<br>
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-object-group" style=""></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>TRANSFORMATION OF ACTIVITY</b></h3>
+                        <p class="w3-text-grey">
+                            Bringing activities in full compliance with Sharia standards and norms
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-sitemap" style=""></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>NEW MARKETS</b></h3>
+                        <p class="w3-text-grey">
+                            Entering the domestic market <br>
+                            Entrance to the foreign market <br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w3-third w3-center boluk">
+                    <div>
+                        <div class="w3-card-4 w3-margin w3-xxlarge krug"
+                             style="">
+                            <i class="fa fa-list-alt" style=""></i>
+                        </div>
+                    </div>
+                    <div class="w3-margin w3-left-align" style="">
+                        <h3 class="w3-text-green"><b>TRAINING</b></h3>
+                        <p class="w3-text-grey">
+                            Business Planning, Management Financial literacy etc.
+
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+    <div class="w3-center zagolov w3-margin-bottom w3-container">
+        <h2>
+            <b class="w3-center">IF YOU ARE <span class="w3-text-light-green">INTERESTED</span> FILL IN THE
+                <span class="w3-text-light-green">FORM</span></b>
+        </h2>
+    </div>
+    <div class="w3-row-padding w3-margin">
+        <div class="w3-half">
+            <div class="w3-margin">
+                <h2 class="w3-center w3-margin w3-text-green"><b>How to join <span
+                        class="w3-text-black">IAPEF?</span></b></h2>
+                <p class="w3-margin">
+                <p>To join the association you need to take 2 simple steps:</p>
+                <br>
+                <p>1) fill out the form, indicating: name, phone number, email address;</p><br>
+
+                <p>2) send the completed form. Our staff will contact you at within one hour</p><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="w3-half">
+            <div class="w3-margin">
+                <div class="w3-card-4">
+                    <div class="w3-container w3-green">
+                        <h2 class="w3-center">Contact details</h2>
+                    </div>
+
+                    <form class="w3-container w3-margin" action="{% url 'en_contact_form' %}"
+                          method="post">{% csrf_token %}
+                        <p>
+                            <input class="w3-input" type="text" name="name" required>
+                            <label>Your name</label></p>
+                        <p>
+                            <input class="w3-input" type="text" name="phone" required>
+                            <label>Phone number</label>
+                        </p>
+                        <p>
+                            <input class="w3-input" type="text" name="email" required>
+                            <label>Email</label>
+                        </p>
+                        <input type="submit"
+                               class="w3-green w3-button w3-margin-top w3-margin-bottom w3-right w3-hover-black w3-round">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <style>
+        .krug {
+            width: 30%;
+            height: auto;
+            border-radius: 50%;
+            padding: 50px;
+            position: relative;
+        }
+
+        .krug i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .podrobnee-banner {
+            width: 100%;
+            background: white url("{% static 'img/logo_for_mobaile 3.png' %}") no-repeat right 50%;
+            background-size: 480px 480px;
+        }
+
+        .banner-row {
+            width: 70%;
+        }
+
+        .top-zagolov {
+            font-size: 4vw;
+        }
+        .boluk {
+            height: 360px;
+            border: #0f74a8;
+        }
+
+    @media screen and (max-width:480px) {
+        .podrobnee-banner {
+            background: white;
+        }
+        .banner-row {
+            width: 100%;
+        }
+        .boluk {
+            width: 50%;
+        }
+    }
+
+    @media screen and (max-width:680px) {
+        .podrobnee-banner {
+            background: white;
+        }
+        .banner-row {
+            width: 100%;
+        }
+        .boluk {
+            width: 50%;
+        }
+    }
+    </style>
+{% endblock %}

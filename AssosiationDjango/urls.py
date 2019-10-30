@@ -22,7 +22,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^', include('post.ru_urls')),
+    url(r'^en/', include('post.en_urls')),
     url(r'^mediaportal/', include('media_gallery.ru_urls')),
+    url(r'^en/mediaportal/', include('media_gallery.en_urls')),
 ]
 
 if settings.DEBUG: urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

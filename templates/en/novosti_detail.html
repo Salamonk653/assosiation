@@ -1,0 +1,91 @@
+{% extends 'en/base.html' %}
+{% block title %}
+{{ article.name }}
+{% endblock %}
+{% block content %}
+    {% include 'generic/h2.html' %}
+    <div class="novosti w3-row w3-light-gray" style="background-color: #a5a5a5;background-size: 100vh 100vh;">
+        <div class="w3-col l8 s12">
+            <!-- Blog entry -->
+            <div class="w3-card-4 w3-margin w3-white">
+                <img src="{{ article.image.url }}" alt="Nature" style="width:100%">
+
+                <div class="w3-container">
+                    <div class="w3-left">
+                        <i class="fa fa-clock-o w3-text-green w3-margin">
+                            <span class="w3-text-black">{{ article.created|time }}</span>
+                        </i>
+                        <i class="w3-text-green fa fa-calendar w3-margin">
+                            <span class="w3-text-black">{{ article.created|date:'y.m.d' }}</span>
+                        </i>
+                    </div>
+                    <br>
+                    <br>
+                    <hr class="hr">
+                </div>
+
+                <div class="w3-container">
+                    <p>{{ article.text }}</p>
+                    <br><br><br>
+
+                </div>
+
+                <hr class="w3-border-green">
+                <div class="w3-container w3-margin w3-right">
+                    {#                <div class="sharethis-inline-share-buttons"></div>#}
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_inline_share_toolbox"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Introduction menu -->
+        <div class="w3-col l4">
+            <!-- About Card -->
+            <div class="w3-card w3-margin">
+                <div class="w3-green w3-text-white w3-container w3-padding">
+                    <h4 class=""><b>Our projects</b></h4>
+                </div>
+                <ul class="w3-ul w3-hoverable w3-white">
+                    {% for article in projects %}
+                        <li class="w3-padding-16 w3-hover-black">
+                            <img src="{{ article.image.url }}" alt="Image" class="w3-left w3-margin-right"
+                                 style="width:50px">
+                            <a href="{{ article.get_absolute_url }}" class="w3-large"
+                               title="{{ article.name }}">{{ article.name|truncatechars:30 }}</a><br>
+                        </li>
+
+                    {% endfor %}
+
+
+                </ul>
+            </div>
+            <hr class="hr w3-margin">
+
+            <!-- Posts -->
+            <div class="w3-card w3-margin">
+                <div class="w3-green w3-text-white w3-container w3-padding">
+                    <h4 class=""><b>Latest news</b></h4>
+                </div>
+                <ul class="w3-ul w3-hoverable w3-white">
+                    {% for article in articles %}
+                        <li class="w3-padding-16 w3-hover-black">
+                            <img src="{{ article.image.url }}" alt="Image" class="w3-left w3-margin-right"
+                                 style="width:50px">
+                            <a href="{{ article.get_absolute_url }}" class="w3-large" title="{{ article.name }}">{{ article.name|truncatechars:30 }}</a><br>
+                        </li>
+
+                    {% endfor %}
+
+
+                </ul>
+            </div>
+            <hr>
+
+            <hr>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d3c3f457db0da35"></script>
+{% endblock %}

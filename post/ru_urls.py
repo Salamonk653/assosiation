@@ -18,7 +18,6 @@ urlpatterns = [
     url(r'^category/onas/$', Onas.as_view(), name='ru_onas'),
     url(r'^category/(?P<slug>[\w-]+)/$', ProjectList.as_view(), name='ru_category_detail'),
     url(r'^article/(?P<slug>[\w-]+)/$', ArticleDetail.as_view(), name='ru_article_detail'),
-    url(r'^user_reaction/$', UserReactionView.as_view(), name='ru_user_reaction'),
     url(r'^search/$', Search.as_view(), name='ru_search'),
     url(r'^podrobnee/$', Podrobnee.as_view(), name='ru_podrobnee'),
 ]

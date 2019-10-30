@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'ru/base.html' %}
 {% load staticfiles %}
 {% block title %}
     {{ h2|upper }}
@@ -30,8 +30,8 @@
                 {% for album in page_obj %}
 
 
-                    <img src="{{ album.image.url }}" data-desc="{% if album.description %}
-                            <p>{{ album.description }}</p>
+                    <img src="{{ album.image.url }}" data-desc="{% if album.ru_description %}
+                            <p>{{ album.ru_description }}</p>
                         {% endif %}" data-fullsrc="{{ album.image.url }}" alt="">
                 {% endfor %}
                 <br><br><br>

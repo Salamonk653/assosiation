@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'ru/base.html' %}
 {% block title %}
     {{ h2|title }}
 {% endblock %}
@@ -31,13 +31,11 @@
 
                         </div>
                         <div class="">
-                            {% if album.name %}
-                                <div class="w3-container w3-hover-text-green" title="{{ album.name }}"
+                                <div class="w3-container w3-hover-text-green" title="{{ album.ru_name }}"
                                      style="height: 60px">
-                                    <b style="margin-top: 5px">{{ album.name|truncatechars:35 }}</b>
+                                    <b style="margin-top: 5px">{{ album.ru_name|truncatechars:35 }}</b>
                                     <hr class="hr" style="margin-top: 2%">
                                 </div>
-                            {% endif %}
 
                         </div>
                     </div>

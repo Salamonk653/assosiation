@@ -5,10 +5,10 @@ from django import forms
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'input-field', 'placeholder': u'Имя'}))
-    email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': u'Емейл', 'class': 'input-field'}))
+    name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'input-field', 'placeholder': u'Name'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': u'Email', 'class': 'input-field'}))
     phone = forms.CharField(max_length=100,
-                            widget=forms.TextInput(attrs={'class': 'input-field', 'placeholder': u'Телефон'}))
+                            widget=forms.TextInput(attrs={'class': 'input-field', 'placeholder': u'Phone'}))
 
 
 class SearchForm(forms.Form):

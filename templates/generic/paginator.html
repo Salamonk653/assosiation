@@ -5,7 +5,7 @@
             {% if page_obj.has_previous %}
                 <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"
                    class="w3-button w3-left w3-hover-green">&#10094;
-                    Предыдущий</a>
+                    </a>
             {% endif %}
             {% for n in page_obj.paginator.page_range %}
                 {% if page_obj.number == n %}
@@ -16,7 +16,7 @@
             {% endfor %}
             {% if page_obj.has_next %}
                 <a href="{{ request.path }}?page={{ page_obj.next_page_number }}"
-                   class="w3-button w3-right w3-hover-green">Следующий
+                   class="w3-button w3-right w3-hover-green">
                     &#10095;</a>
             {% endif %}
         </div>

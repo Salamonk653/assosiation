@@ -1,0 +1,33 @@
+{% extends 'en/base.html' %}
+{% block title %}
+    {{ h2|upper }}
+{% endblock %}
+{% block css %}
+{% endblock %}
+{% block content %}
+    {% include 'generic/h2.html' %}
+    <hr class="w3-border-amber">
+    <div class="w3-container">
+        <div class="w3-row-padding" style="background-color: #dddddd">
+            {% for album in albums %}
+                <div class="w3-quarter w3-margin-top">
+                    <div class="w3-container w3-card-4 w3-white w3-left-align w3-margin-bottom "
+                         style="height: 320px; padding: 8px;">
+                        <div class="test"
+                             style="position: relative;overflow:hidden;background-image: url({{ album.oblojka.url }});
+                                     background-position: center;
+                                     height: 220px;
+                                     background-size: cover;">
+                        </div>
+                        <div class="w3-container">
+                                <b title="{{ album.en_name }}"><a href="{{ album.en_get_absolute_url }}"
+                                      class="w3-hover-text-green">{{ album.en_name|truncatechars:35 }}</a></b>
+                                <hr class="hr" style="margin-top: 2%">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% include 'generic/paginator.html' %}
+    </div>
+{% endblock %}

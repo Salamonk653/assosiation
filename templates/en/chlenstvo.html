@@ -1,0 +1,79 @@
+{% extends 'en/base.html' %}
+{% block css %}
+{% endblock %}
+{% block title %}
+    {{ h2|upper }}
+{% endblock %}
+{% block js %}
+{% endblock %}
+{% block content %}
+    {% include 'generic/h2.html' %}
+    <br><br><br>
+    <div class="ss w3-margin w3-center">
+        <h3>
+            <b>Why it is profitable and important to adhere to the principles and values of <br> <span
+                    class="w3-text-green"> IAPEF and join membership?</span></b>
+        </h3>
+
+        <p>Joining the community of progressive entrepreneurs of Kyrgyzstan through participation in the activities of
+            the association IAPEF, businessmen get the opportunity to protect and promote their interests at the state
+            and
+            local levels, access to extensive contacts and connections in a business environment. Flexible policy
+            in the activities of the association It is built taking into account gender aspects and is aimed at
+            perceiving the most advanced
+            world processes of conducting business. Membership in IAPEF helps to promote the successful development of
+            the business
+            environment in Kyrgyzstan to develop own national business standards.</p>
+        <hr class="hr w3-margin">
+
+    </div><br><br><br>
+    <div class="w3-row-padding w3-margin">
+        <div class="w3-half">
+            <div class="w3-margin">
+                <h2 class="w3-center w3-margin w3-text-green"><b>How to join the <span
+                        class="w3-text-black">IAPEF?</span></b></h2>
+                <p class="w3-margin">
+                <p>To join the association you need to take 2 simple steps:</p>
+                <br>
+                <p>1) fill out the form, indicating: name, phone number, email address;</p><br>
+
+                <p>2) send the completed form. Our staff will contact you at within one hour</p><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="w3-half">
+            <div class="w3-margin">
+                <div class="w3-card-4">
+                    <div class="w3-container w3-green">
+                        <h2 class="w3-center">Contact details</h2>
+                    </div>
+
+                    <form class="w3-container w3-margin" action="{% url 'en_contact_form' %}"
+                          method="post">{% csrf_token %}
+                        <p>
+                            <input class="w3-input" type="text" name="name" required>
+                            <label>Your name</label></p>
+                        <p>
+                            <input class="w3-input" type="text" name="phone" required>
+                            <label>Telephone number</label>
+                        </p>
+                        <p>
+                            <input class="w3-input" type="text" name="email" required>
+                            <label>Email</label>
+                        </p>
+                        <input type="submit"
+                               class="w3-green w3-button w3-margin-top w3-margin-bottom w3-right w3-hover-black w3-round">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <style>
+        .top-zagolov {
+            font-size: 6vw;
+        }
+    </style>
+{% endblock %}

@@ -19,20 +19,14 @@ class AlbumAdmin(admin.ModelAdmin):
     inlines = [
         ImageInline,
     ]
-    list_display = ['name', 'is_public']
-    prepopulated_fields = {'slug': ('name',)}
+    list_display = ['ru_name', 'is_public']
+    prepopulated_fields = {'slug': ('ru_name',)}
     readonly_fields = ['image_tag']
 
 
 class VideoAdmin(admin.ModelAdmin):
-    list_display = ['name', 'is_public']
-    prepopulated_fields = {'slug': ('name',)}
-    readonly_fields = ['image_tag']
-
-
-class MediaAdmin(admin.ModelAdmin):
-    list_display = ['name', 'is_public']
-    prepopulated_fields = {'slug': ('name',)}
+    list_display = ['ru_name', 'is_public']
+    prepopulated_fields = {'slug': ('ru_name',)}
     readonly_fields = ['image_tag']
 
 
