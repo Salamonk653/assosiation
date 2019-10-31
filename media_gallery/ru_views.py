@@ -33,7 +33,7 @@ class ImageList(Search):
         self.context['album'] = album
         self.context['page_obj'] = page
         self.context['is_paginated'] = page.has_other_pages()
-        self.context['h2'] = album.name
+        self.context['h2'] = album.ru_name
         return render(request, 'ru/image_list.html', self.context)
 
 

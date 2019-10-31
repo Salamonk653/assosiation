@@ -2,71 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4b8fc79-0c51-4e43-b3c6-0203c3a2216d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/media_gallery/en_urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media_gallery/en_views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media_gallery/migrations/0002_remove_album_name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media_gallery/migrations/0003_auto_20191026_1924.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media_gallery/migrations/0004_auto_20191026_1946.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media_gallery/migrations/0005_auto_20191026_1949.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media_gallery/migrations/0006_remove_video_language.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/en_urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/en_views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_dev/img/MAPEF_LOGO_EN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/album_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/anonsy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/anonsy_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/chlenstvo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/contacts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/generic/dostijenie_mapef.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/generic/glavnyi_slider.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/generic/novosti_mapef.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/generic/opisanie_mapef.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/generic/project_mapef.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/image_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/katolog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/katolog_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/nashi_proecty.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/novosti.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/novosti_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/onas.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/podrobnee.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/proejects.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/en/video_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ru/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssosiationDjango/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AssosiationDjango/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_gallery/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/media_gallery/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_gallery/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/media_gallery/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/ru_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/ru_urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/ru_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/ru_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_dev/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static_dev/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_prod/ckeditor/ckeditor/plugins/adobeair/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/static_prod/ckeditor/ckeditor/plugins/adobeair/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_prod/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static_prod/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/en/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/generic/h2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/generic/h2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/generic/paginator.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/generic/paginator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/album_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/album_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/anonsy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/anonsy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/anonsy_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/anonsy_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_gallery/ru_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/media_gallery/ru_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ru/chlenstvo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/chlenstvo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/generic/glavnyi_slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/generic/glavnyi_slider.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/image_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/image_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/katolog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/katolog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/katolog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/katolog_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/nashi_proecty.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/nashi_proecty.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/novosti.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/novosti.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/novosti_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/novosti_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/onas.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/onas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/podrobnee.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/podrobnee.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/proejects.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/proejects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ru/video_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ru/video_list.html" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,73 +22,88 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/post/ru_views.py">
+        <entry file="file://$PROJECT_DIR$/media_gallery/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="176" selection-start-line="176" selection-end-line="176" />
-              <folding>
-                <element signature="e#51#78#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="493">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/media_gallery/ru_urls.py">
+        <entry file="file://$PROJECT_DIR$/media_gallery/en_views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="153">
+              <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/en/podrobnee.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3179">
-              <caret line="187" column="35" selection-start-line="187" selection-start-column="35" selection-end-line="187" selection-end-column="35" />
-              <folding>
-                <element signature="e#4949#5222#0#HTML" />
-                <element signature="e#5227#7112#0#HTML" />
-                <element signature="e#5885#7101#0#HTML" />
+                <element signature="e#51#94#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/post/ru_urls.py">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-62">
-              <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-              <folding>
-                <element signature="e#51#83#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/post/en_urls.py">
+        <entry file="file://$PROJECT_DIR$/templates/en/image_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-              <folding>
-                <element signature="e#51#83#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="544">
+              <caret line="32" column="79" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/post/en_views.py">
+        <entry file="file://$PROJECT_DIR$/templates/en/album_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2992">
-              <caret line="176" selection-start-line="176" selection-end-line="176" />
+            <state>
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/media_gallery/ru_views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/ru/image_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/ru/album_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/post/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
               <folding>
-                <element signature="e#51#105#0" expanded="true" />
+                <element signature="e#51#83#0" expanded="true" />
+                <element signature="e#365#651#0" />
               </folding>
             </state>
           </provider>
@@ -154,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/media_gallery/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1411">
+            <state relative-caret-position="1275">
               <caret line="83" column="69" selection-start-line="83" selection-start-column="69" selection-end-line="83" selection-end-column="69" />
               <folding>
                 <element signature="e#51#79#0" expanded="true" />
@@ -184,6 +142,7 @@
       <find>block</find>
       <find>ru</find>
       <find>keng</find>
+      <find>user</find>
     </findStrings>
     <replaceStrings>
       <replace>AnonsyList</replace>
@@ -198,9 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/post/models.py" />
-        <option value="$PROJECT_DIR$/templates/ru/katolog.html" />
-        <option value="$PROJECT_DIR$/templates/ru/proejects.html" />
         <option value="$PROJECT_DIR$/post/admin.py" />
         <option value="$PROJECT_DIR$/post/templatetags/category.py" />
         <option value="$PROJECT_DIR$/templates/ru/katolog_detail.html" />
@@ -249,6 +205,9 @@
         <option value="$PROJECT_DIR$/post/en_views.py" />
         <option value="$PROJECT_DIR$/post/ru_views.py" />
         <option value="$PROJECT_DIR$/post/ru_urls.py" />
+        <option value="$PROJECT_DIR$/media_gallery/ru_views.py" />
+        <option value="$PROJECT_DIR$/templates/ru/chlenstvo.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -330,7 +289,12 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/static_dev/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -406,18 +370,20 @@
       <workItem from="1571392292844" duration="996000" />
       <workItem from="1571393496092" duration="37000" />
       <workItem from="1571978685644" duration="23538000" />
-      <workItem from="1572349694036" duration="251000" />
+      <workItem from="1572349694036" duration="833000" />
+      <workItem from="1572441634767" duration="2279000" />
+      <workItem from="1572534891151" duration="1082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262884000" />
+    <option name="totallyTimeSpent" value="266827000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2806354" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28971255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -434,10 +400,11 @@
       <window_info anchor="bottom" id="manage.py@AssosiationDjango" order="11" weight="0.32843137" />
       <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32843137" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32843137" />
+      <window_info anchor="right" id="Remote Host" visible="true" weight="0.32980332" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
@@ -456,47 +423,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AssosiationDjango/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2459">
-          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
-          <folding>
-            <element signature="e#322#331#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/generic/h2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/generic/paginator.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/generic/stuctura.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ru/katolog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/post/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="104" selection-start-line="10" selection-start-column="104" selection-end-line="10" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/en/contacts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-878">
@@ -646,44 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ru/album_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/en/album_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media_gallery/en_views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding>
-            <element signature="e#51#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media_gallery/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ru/image_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/en/video_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -739,17 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/post/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-          <folding>
-            <element signature="e#51#83#0" expanded="true" />
-            <element signature="e#365#651#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static_dev/js/carousel.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -759,13 +636,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/en/image_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="32" column="79" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
         </state>
       </provider>
     </entry>
@@ -779,25 +649,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/en/podrobnee.html">
+    <entry file="file://$PROJECT_DIR$/media_gallery/ru_urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3179">
-          <caret line="187" column="35" selection-start-line="187" selection-start-column="35" selection-end-line="187" selection-end-column="35" />
+        <state>
           <folding>
-            <element signature="e#4949#5222#0#HTML" />
-            <element signature="e#5227#7112#0#HTML" />
-            <element signature="e#5885#7101#0#HTML" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media_gallery/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/en/podrobnee.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="83" column="69" selection-start-line="83" selection-start-column="69" selection-end-line="83" selection-end-column="69" />
-          <folding>
-            <element signature="e#51#79#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3179">
+          <caret line="187" column="35" selection-start-line="187" selection-start-column="35" selection-end-line="187" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -821,9 +685,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/post/ru_urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding>
+            <element signature="e#51#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/post/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-827" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/post/ru_views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="352">
           <caret line="176" selection-start-line="176" selection-end-line="176" />
           <folding>
             <element signature="e#51#78#0" expanded="true" />
@@ -831,22 +710,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media_gallery/ru_urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/ru/chlenstvo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media_gallery/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/en/image_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="79" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/en/album_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media_gallery/ru_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ru/image_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ru/album_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/post/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#51#83#0" expanded="true" />
+            <element signature="e#365#651#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/post/ru_urls.py">
+    <entry file="file://$PROJECT_DIR$/media_gallery/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-62">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        <state relative-caret-position="1275">
+          <caret line="83" column="69" selection-start-line="83" selection-start-column="69" selection-end-line="83" selection-end-column="69" />
           <folding>
-            <element signature="e#51#83#0" expanded="true" />
+            <element signature="e#51#79#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media_gallery/en_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding>
+            <element signature="e#51#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
