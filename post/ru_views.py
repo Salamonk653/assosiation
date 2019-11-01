@@ -16,9 +16,9 @@ class Navbar(ContextMixin):
 
     def get_context_data(self, *args, **kwargs):
         context = super(Navbar, self).get_context_data(**kwargs)
-        merop = get_object_or_404(GlavCategory, name__icontains=u'Наши проекты', language__name__icontains=u'ru')
+        merop = GlavCategory.objects.get(name__icontains=u'Наши проекты')
         context['navbar'] = merop.category_set.filter(language__name__icontains=u'ru')
-        context['anonsy'] = get_object_or_404(Category, name__icontains=u'Анонсы', language__name__icontains=u'ru')
+        context['anonsy'] = Category.objects.get(name__icontains=u'Анонсы')
         context['articles_4'] = New.objects.filter(language__name__icontains='ru',
                                                    category__name__icontains=u'Жаңылыктар', is_public=True).order_by(
             '-id')[:5]
@@ -176,10 +176,10 @@ class Onas(TemplateView, Navbar):
 
 class Search(View):
     template_name = 'ru/search.html'
-    merop = get_object_or_404(GlavCategory, name__icontains=u'Наши проекты', language__name__icontains=u'ru')
+    merop = GlavCategory.objects.get(name__icontains=u'Наши проекты')
     context = {'assosiations': OFonde.objects.filter(language__name__icontains='ru').first(),
                'navbar': merop.category_set.filter(language__name__icontains=u'ru'),
-               'anonsy': get_object_or_404(Category, name__icontains=u'Анонсы', language__name__icontains=u'ru'),
+               'anonsy': Category.objects.get(name__icontains=u'Анонсы'),
                'articles_4': New.objects.filter(language__name__icontains='ru', category__name__icontains=u'Жаңылыктар',
                                                 is_public=True).order_by('-id')[:5],
                'form': ContactForm(),

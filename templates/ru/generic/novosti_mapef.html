@@ -74,7 +74,7 @@
 
                         </div>
                         <div class="w3-margin novosti-content">
-                            <a href="{{ cat.get_absolute_url }}" title="{{ cat.name }}">
+                            <a href="{% url 'ru_anonsy_detail' slug=cat.slug %}" title="{{ cat.name }}">
                                 <h3 class="w3-hover-text-green w3-left-align">
                                     <b>{{ cat.name|truncatechars:35 }}</b>
                                 </h3></a>
